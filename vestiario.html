@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vestiário</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <style>
+    .img-sm {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    body {
+      background-color: #3878cd;
+      font-family: 'Burbank Big Condensed', sans-serif;
+    }
+
+    .navbar {
+      justify-content: center;
+    }
+
+    .navbar-nav {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+      color: white;
+      font-size: 1.12rem;
+      margin-left: 0.8rem;
+      margin-right: 0.8rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar-nav .nav-link.active {
+      font-weight: bold;
+    }
+
+    .navbar-nav .nav-link:hover {
+      background-color: white;
+      color: #00275a;
+      font-size: 1.23rem;
+    }
+
+    .navbar-bottom {
+      display: flex;
+      justify-content: center;
+      background-color: #0049b7;
+      padding: 10px 0;
+    }
+
+    .navbar-bottom .nav-link {
+      color: white;
+      font-size: 1rem;
+      margin: 0 1rem;
+    }
+
+    .navbar-bottom .nav-link:hover {
+      background-color: #003c71;
+    }
+
+    .navbar-bottom .nav-link.active {
+      font-weight: bold;
+    }
+
+    .navbar-bottom .nav-item {
+      margin-right: 1rem;
+    }
+
+    .vestiario-item {
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .vestiario-item .card-body {
+      padding: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.topgames.com/play/Fortnite-Building-Online#goog_game_inter">Jogar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Passe de Batalha</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.fortnite.com/competitive?lang=pt-BR">Competir</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="vestiario.html">Vestiário</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Loja de Itens</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="carrinho.html">Carrinho</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">V-Bucks 
+              <img src="https://purepng.com/public/uploads/thumbnail//one-v-buck-90b.png" alt="V-Bucks" style="height: 24px; vertical-align: middle;" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h2>Seu Vestiário</h2>
+    <div id="vestiario-list" class="d-flex flex-wrap">
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function atualizarVestiario() {
+      const vestiario = JSON.parse(localStorage.getItem('vestiario')) || [];
+      const vestiarioList = document.getElementById('vestiario-list');
+      vestiarioList.innerHTML = '';
+
+      vestiario.forEach(item => {
+        vestiarioList.innerHTML += `
+          <div class="card vestiario-item" style="width: 18rem;">
+            <img src="${item.image}" class="card-img-top img-sm" alt="${item.title}">
+            <div class="card-body">
+              <h5 class="card-title">${item.title}</h5>
+              <button class="btn btn-outline-danger" onclick="removerDoVestiario('${item.id}')">Remover</button>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function removerDoVestiario(id) {
+      const vestiario = JSON.parse(localStorage.getItem('vestiario')) || [];
+      const index = vestiario.findIndex(item => item.id === id);
+      if (index !== -1) {
+        vestiario.splice(index, 1);
+        localStorage.setItem('vestiario', JSON.stringify(vestiario));
+        atualizarVestiario();
+      }
+    }
+
+    atualizarVestiario();
+  </script>
+</body>
+
+</html>

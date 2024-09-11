@@ -1,0 +1,78 @@
+{
+  "posts": [
+    { "id": "1", "title": "loja fortnite", "views": 300 },
+    { "id": "2", "title": "todo dias as 21", "views": 200 }
+  ],
+  "comments": [
+    { "id": "1", "text": "skin de resident evil", "postId": "1" },
+    { "id": "2", "text": "incrivel", "postId": "1" }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "products": [
+    {
+      "id": "1",
+      "title": "CHRIS REDFIELD",
+      "price": 1500,
+      "cat": "marvel",
+      "image": "https://media.fortniteapi.io/images/7ad392cb57a3f1f53475b1185114f5db/full_featured.png"
+    },
+    {
+      "id": "2",
+      "title": "Dominó",
+      "price": 1500,
+      "cat": "marvel",
+      "image": "https://media.fortniteapi.io/images/0ba7c7b1bd5cf80febd490a3b5fd26e3/full_featured.png"
+    },
+    {
+      "id": "4",
+      "title": "Ninja",
+      "price": 2000,
+      "cat": "icons",
+      "image": "https://media.fortniteapi.io/images/b21462cd60f067891264721c1f984b1b/full_featured.png"
+    },
+    {
+      "id": "5",
+      "title": "Guerreiro",
+      "price": 1500,
+      "cat": "padrao",
+      "image": "https://media.fortniteapi.io/images/7dceae32a38e03b1f0e9e75a7f30f7f6/full_featured.png"
+    },
+    {
+      "id": "6",
+      "title": "Colosso",
+      "price": 1600,
+      "cat": "marvel",
+      "image": "https://media.fortniteapi.io/images/2ba2f3aa06b148703c4c5db9fe88ddd9/full_featured.png"
+    },
+    {
+      "id": "7",
+      "title": "Venom",
+      "price": 2000,
+      "cat": "marvel",
+      "image": "https://media.fortniteapi.io/images/1e481ade0e334ac8d61c3e27cbb30d63/full_featured.png"
+    },
+    {
+      "id": "8",
+      "title": "John Wick",
+      "price": 2000,
+      "cat": "jogos",
+      "image": "https://media.fortniteapi.io/images/46c716ab2a39918a9825a2847455aaed/full_featured.png"
+    },
+    {
+      "id": "9",
+      "title": "Midas",
+      "price": 1800,
+      "cat": "padrao",
+      "image": "https://media.fortniteapi.io/images/eacce56d83f7c59f74d3a0ef3e7fce04/full_featured.png"
+    },
+    {
+      "id": "10",
+      "title": "Harley Quinn",
+      "price": 1500,
+      "cat": "dc",
+      "image": "https://media.fortniteapi.io/images/1ac9c1fbd6c3ffa94a38d1037e4c0156/full_featured.png"
+    }
+  ]
+}
